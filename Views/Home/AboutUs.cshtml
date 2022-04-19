@@ -1,0 +1,84 @@
+﻿
+@{ ViewData["Title"] = "AboutUs"; }
+
+
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>*@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="~/css/AboutUs.css" asp-append-version="true" />
+
+<script>
+    $(document).ready(function () {
+        $('.has-animation').each(function (index) {
+            $(this).delay($(this).data('delay')).queue(function () {
+                $(this).addClass('animate-in');
+            });
+        });
+    });
+
+</script>
+
+
+<br>
+
+<div class="has-animation animation-ltr" data-delay="10">
+    <p class="bigger text text-danger"> About Us 
+    @*<h1 class=" ">About Us</h1>*@
+    </p>
+</div>
+
+
+
+<br>
+<br>
+
+<div class="has-animation animation-rtl" data-delay="1000">
+    <p class="text text-dark"> Aspire, is an online website that creates a platform for students and others to find some creative and unique ideas for their projects. Any registered user can share their ideas by posting them on this website, these users will be called a Client and any other users who are interested in working on that idea can contact the client, these users will be called students as this website is specially built for them.</p>
+    <p class="text text-dark">The main purpose of Aspire is to create a platform where students can find new, creative and unique ideas for their projects. </p>
+</div>
+
+<br>
+<br>
+
+<div class="has-animation animation-ltr" data-delay="1500">
+    <p class="text font-weight-bolder text-dark">Why do we need Aspire? </p>
+    <p class="text text-dark" data-delay="2000"> As a student, you might not have much knowledge to create your own unique project that is not in the market yet especially as an IT student. As well as it’s quite hard to find one on the internet as everything is already built. Moreover, even finding clients for the final project by yourself is hard. So Aspire will be the place for students to get ideas they want and clients they will like to work with, both at the same place. On Aspire.</p>
+</div>
+
+<br>
+<br>
+
+<div class="has-animation animation-ltr" data-delay="1500">
+    <p class="text font-weight-bolder text-center text-dark">Our Team</p>
+    <p class="text text-dark" data-delay="2000">
+        <div class="row">
+            <div class="col-4 text-center">
+                <figure>
+                <img src="~/Images/Harshil_IMG.jpg" class="rounded-circle mb-2" width="200">
+                </figure>
+                <p data-delay="2000" class="text-dark">Harshil Shoom</p>
+            </div>
+            <div class="col-4 text-center">
+                <figure>
+                <img src="~/Images/Sagar_IMG.png" class="rounded-circle mb-2" width="200">
+                </figure>
+                <p data-delay="2000" class="text-dark">Sagar Shah</p>
+            </div>
+            <div class="col-4 text-center">
+               <figure>
+                <img src="~/Images/chirag_IMG.jpeg" class="rounded-circle mb-2" width="200">
+                </figure>
+                <p data-delay="2000" class="text-dark">Chirag Patil</p>
+            </div>
+        </div>
+    </p>
+</div>
+
+<br>
+<br>
+<div class="has-animation animation-rtl text-dark" data-delay="2000">
+    <img src="https://placeimg.com/640/480/nature" width="700" height="400" />
+</div>
+
+

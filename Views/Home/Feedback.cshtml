@@ -1,0 +1,70 @@
+﻿@{ ViewData["Title"] = "Feedback"; }
+    @if(TempData["Reply"] != null)
+    {
+       <div class="alert alert-success">
+        @TempData["Reply"].ToString()
+        </div>
+    }
+<h1 class="text-center text-info">Feedback Form</h1>
+<div class="card">
+    <img src="~/Images/Background.jpg" class="card-img w-90 "  alt="Background Image"/>
+    <form class="card-img-overlay text-white" method="post">
+
+
+
+        <h3 class=" text-center text-dark">Please help us to serve you better by taking a couple of miniutes</h3>
+
+        <div class="form-group">
+            <label class="control-label text-primary">How were satisfied you are with Aspire?</label>
+            <br />
+            <div class="ml-2 p-2 text-black">
+
+                <input type="radio" id="Excellent" name="rating" value="Excellent">
+                <label for="Excellent">Excellent</label>
+                <br>
+
+                <input type="radio" id="Good" name="rating" value="Good">
+                <label for="Good">Good</label>
+                <br>
+
+                <input type="radio" id="Neutral" name="rating" value="Neutral">
+                <label for="Neutral">Neutral</label>
+                <br>
+
+                <input type="radio" id="Poor" name="rating" value="Poor">
+                <label for="Poor">Poor</label>
+                <br>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="control-label text-warning">If you have specific feedback, Please write to us...</label>
+            <textarea class="form-control bg-light text-dark" name="comment" placeholder="Add your comment here..."></textarea>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name"></label>
+                    <input type="text" name="username" class="form-control text-white bg-dark" placeholder="Your Name" />
+
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" name="userEmail" class="form-control text-white bg-dark" placeholder="Enter Your Email"/>
+
+                </div>
+
+            </div>
+
+        </div>
+        <button class= "btn btn-dark mt-3"> Submit</button>
+    </form>
+</div>

@@ -1,0 +1,111 @@
+﻿@model Aspire.Models.Post
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center">Edit Post</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostId" />
+            <div class="form-group mt-2">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Discription" class="control-label"></label>
+                <textarea asp-for="Discription" class="form-control"></textarea>
+                <span asp-validation-for="Discription" class="text-danger"></span>
+            </div>
+        
+            <div class="form-group mt-2">
+                <label asp-for="PostStatusId" class="control-label"></label>
+                @if(Model.PostStatusId == 5)
+                {
+                    <select asp-for="PostStatusId" class="form-control" disabled>
+                        <option>Blocked</option>
+                    </select>
+                }
+                else
+                {
+                    <select asp-for="PostStatusId" class="form-control" asp-items="ViewBag.PostStatusId"></select>
+                }
+                <span asp-validation-for="PostStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="PostTypeId" class="control-label"></label>
+                <select asp-for="PostTypeId" class="form-control" asp-items="ViewBag.PostTypeId"></select>
+                <span asp-validation-for="PostTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Save" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+@*@model Aspire.Models.Post
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PostId" />
+            <div class="form-group mt-2">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="Discription" class="control-label"></label>
+                <textarea asp-for="Discription" class="form-control"></textarea>
+                <span asp-validation-for="Discription" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Support" class="control-label"></label>
+                <input asp-for="Support" class="form-control" />
+                <span asp-validation-for="Support" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostedOn" class="control-label"></label>
+                <input asp-for="PostedOn" class="form-control" />
+                <span asp-validation-for="PostedOn" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="PostStatusId" class="control-label"></label>
+                @if(Model.PostStatusId == 5)
+                {
+                    <select asp-for="PostStatusId" class="form-control" disabled>
+                        <option>Blocked</option>
+                    </select>
+                }
+                else
+                {
+                    <select asp-for="PostStatusId" class="form-control" asp-items="ViewBag.PostStatusId"></select>
+                }
+                <span asp-validation-for="PostStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <label asp-for="PostTypeId" class="control-label"></label>
+                <select asp-for="PostTypeId" class="form-control" asp-items="ViewBag.PostTypeId"></select>
+                <span asp-validation-for="PostTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Save" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>*@
+

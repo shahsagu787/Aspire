@@ -1,0 +1,30 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Aspire.Areas.Identity.Data
+
+@inject SignInManager<AuthUser> SignInManager
+@inject UserManager<AuthUser> UserManager
+
+<ul class="navbar-nav">
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <a id="manage" class="nav-link text-dark font-weight-bolder" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><h5>
+  <i class="fa-regular fa-user"></i>
+ @UserManager.FindByNameAsync(User.Identity.Name).Result.FirstName</h5></a>
+    </li>
+    <li class="nav-item">
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button id="logout" type="submit" class="nav-link btn btn-link text-dark"><h5>Logout</h5></button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" id="register" asp-area="Identity" asp-page="/Account/Register"><h5 class="text-dark font-weight-bold">Register</h5></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="login" asp-area="Identity" asp-page="/Account/Login"><h5 class="text-dark font-weight-bold">Login</h5></a>
+    </li>
+}
+</ul>
